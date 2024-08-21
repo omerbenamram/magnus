@@ -1,0 +1,154 @@
+Measure Mode: wall_time
+Thread ID: 220
+Fiber ID: 200
+Total: 2.278683
+Sort by: self_time
+
+ %self      total      self      wait     child     calls  name                           location
+  6.84      0.799     0.156     0.000     0.643    10000   Psych::Parser#_native_parse    
+  6.72      0.346     0.153     0.000     0.193   170000   Psych::ScalarScanner#tokenize  /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/scalar_scanner.rb:37
+  5.95      0.673     0.136     0.000     0.537   180000   Psych::Visitors::ToRuby#deserialize /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/visitors/to_ruby.rb:51
+  4.56      1.343     0.104     0.000     1.239   220000  *Psych::Visitors::Visitor#visit /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/visitors/visitor.rb:29
+  4.38      1.280     0.100     0.000     1.181    30000  *Array#each                     
+  3.96      0.412     0.090     0.000     0.322   180000   Psych::TreeBuilder#scalar      /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/tree_builder.rb:96
+  3.78      1.350     0.086     0.000     1.264   220000  *Psych::Visitors::ToRuby#accept /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/visitors/to_ruby.rb:34
+  3.64      0.083     0.083     0.000     0.000   510000   String#match?                  
+  3.04      0.216     0.069     0.000     0.146   280000   Class#new                      
+  2.67      0.061     0.061     0.000     0.000   270000   Psych::TreeBuilder#event_location /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/tree_builder.rb:33
+  2.61      0.059     0.059     0.000     0.000   180000   Psych::Nodes::Scalar#initialize /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/nodes/scalar.rb:58
+  2.55      0.098     0.058     0.000     0.040   220000   Psych::TreeBuilder#set_start_location /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/tree_builder.rb:127
+  2.42      0.205     0.055     0.000     0.150   180000   Psych::TreeBuilder#set_location /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/tree_builder.rb:122
+  2.39      0.089     0.054     0.000     0.035   210000   Psych::TreeBuilder#set_end_location /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/tree_builder.rb:132
+  2.25      0.777     0.051     0.000     0.725   180000   Psych::Visitors::ToRuby#visit_Psych_Nodes_Scalar /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/visitors/to_ruby.rb:129
+  2.16      0.106     0.049     0.000     0.057   190000   Psych::Visitors::ToRuby#resolve_class /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/visitors/to_ruby.rb:425
+  2.03      0.063     0.046     0.000     0.016   210000   Psych::Visitors::ToRuby#register /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/visitors/to_ruby.rb:333
+  1.68      0.038     0.038     0.000     0.000   460000   Hash#[]                        
+  1.67      1.345     0.038     0.000     1.307   220000  *Psych::Visitors::Visitor#accept /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/visitors/visitor.rb:5
+  1.63      0.068     0.037     0.000     0.031   200000   Psych::ClassLoader#load        /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/class_loader.rb:25
+  1.25      0.031     0.029     0.000     0.002   220000   Psych::Visitors::Visitor#dispatch /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/visitors/visitor.rb:19
+  1.17      0.027     0.027     0.000     0.000   380000   Psych::Nodes::Scalar#tag       
+  1.16      0.045     0.026     0.000     0.019    90000   Psych::Visitors::ToRuby#deduplicate /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/visitors/to_ruby.rb:395
+  1.10      0.025     0.025     0.000     0.000   380000   BasicObject#!                  
+  1.06      0.024     0.024     0.000     0.000   220000   Kernel#class                   <internal:kernel>:18
+  0.89      0.020     0.020     0.000     0.000   220000   Psych::Nodes::Node#start_column= 
+  0.86      0.020     0.020     0.000     0.000   220000   Psych::Nodes::Node#start_line= 
+  0.83      0.019     0.019     0.000     0.000   210000   Psych::Nodes::Node#end_column= 
+  0.82      0.019     0.019     0.000     0.000   250000   Psych::Nodes::Node#children    
+  0.73      0.017     0.017     0.000     0.000   210000   Array#<<                       
+  0.72      0.016     0.016     0.000     0.000   180000   Psych::Nodes::Scalar#value     
+  0.70      0.016     0.016     0.000     0.000   220000   Hash#empty?                    
+  0.70      0.016     0.016     0.000     0.000   210000   Psych::Nodes::Node#end_line=   
+  0.68      0.024     0.016     0.000     0.009    40000   Psych::TreeBuilder#pop         /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/tree_builder.rb:116
+  0.63      0.014     0.014     0.000     0.000   180000   Psych::Nodes::Scalar#anchor    
+  0.63      0.014     0.014     0.000     0.000   180000   Psych::Nodes::Scalar#quoted    
+  0.63      0.048     0.014     0.000     0.034    20000   Psych::TreeBuilder#start_mapping /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/tree_builder.rb:45
+  0.62      1.303     0.014     0.000     1.289    20000  *Psych::Visitors::ToRuby#visit_Psych_Nodes_Mapping /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/visitors/to_ruby.rb:165
+  0.59      2.269     0.013     0.000     2.255    10000   <Module::Psych>#safe_load      /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych.rb:322
+  0.58      0.013     0.013     0.000     0.000   190000   Psych::Visitors::ToRuby#class_loader 
+  0.58      0.013     0.013     0.000     0.000    90000   String#-@                      
+  0.52      0.017     0.012     0.000     0.005    50000   Psych::TreeBuilder#push        /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/tree_builder.rb:111
+  0.51      0.012     0.012     0.000     0.000   100000   Hash#[]=                       
+  0.51      0.012     0.012     0.000     0.000   180000   String#empty?                  
+  0.43      0.010     0.010     0.000     0.000   150000   String#===                     
+  0.42      0.010     0.010     0.000     0.000   170000   Hash#key?                      
+  0.42      0.018     0.010     0.000     0.009    10000   Monitor#synchronize            
+  0.37      0.009     0.009     0.000     0.000    10000   Psych::TreeBuilder#initialize  /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/tree_builder.rb:22
+  0.37      0.028     0.008     0.000     0.020    10000   Psych::Visitors::ToRuby#initialize /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/visitors/to_ruby.rb:23
+  0.37      2.279     0.008     0.000     2.270        1   Integer#times                  <internal:numeric>:231
+  0.36      1.285     0.008     0.000     1.277    20000  *Enumerable#each_slice          
+  0.36      0.126     0.008     0.000     0.118    10000   Psych::Visitors::ToRuby#visit_Psych_Nodes_Sequence /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/visitors/to_ruby.rb:133
+  0.36      0.030     0.008     0.000     0.022    20000   Psych::TreeBuilder#end_mapping /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/tree_builder.rb:52
+  0.35      0.008     0.008     0.000     0.000   140000   String#length                  
+  0.34      0.008     0.008     0.000     0.000   140000   Integer#>                      
+  0.32      0.008     0.007     0.000     0.001    10000   <Class::Date>#strptime         
+  0.32      0.010     0.007     0.000     0.003    20000   Psych::Nodes::Mapping#initialize /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/nodes/mapping.rb:48
+  0.31      0.012     0.007     0.000     0.005    20000   <Module::Psych>#config         /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych.rb:708
+  0.31      0.109     0.007     0.000     0.102    10000   Psych::Visitors::ToRuby#register_empty /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/visitors/to_ruby.rb:338
+  0.31      1.289     0.007     0.000     1.282    20000  *Psych::Visitors::ToRuby#revive_hash /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/visitors/to_ruby.rb:344
+  0.31      0.007     0.007     0.000     0.000    50000   Psych::Nodes::Node#initialize  /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/nodes/node.rb:33
+  0.29      0.026     0.007     0.000     0.019    10000   Psych::TreeBuilder#start_sequence /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/tree_builder.rb:45
+  0.29      0.007     0.007     0.000     0.000    70000   Array#push                     
+  0.27      0.839     0.006     0.000     0.833    10000   <Module::Psych>#parse_stream   /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych.rb:452
+  0.26      0.006     0.006     0.000     0.000    20000   Regexp#===                     
+  0.26      0.012     0.006     0.000     0.006    10000   Psych::Handlers::DocumentStream#end_document /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/handlers/document_stream.rb:17
+  0.26      0.014     0.006     0.000     0.009    10000   Psych::Handlers::DocumentStream#initialize /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/handlers/document_stream.rb:7
+  0.26      0.006     0.006     0.000     0.000   100000   String#==                      
+  0.24      0.028     0.006     0.000     0.023    10000   Kernel#require                 <internal:/Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/rubygems/core_ext/kernel_require.rb>:36
+  0.24      0.023     0.005     0.000     0.017    10000   Psych::TreeBuilder#start_stream /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/tree_builder.rb:84
+  0.24      0.005     0.005     0.000     0.000    90000   Kernel#is_a?                   
+  0.20      0.018     0.005     0.000     0.013    10000   Psych::ClassLoader::Restricted#find /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/class_loader.rb:95
+  0.20      0.018     0.005     0.000     0.013    10000   Psych::TreeBuilder#end_sequence /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/tree_builder.rb:52
+  0.20      0.005     0.005     0.000     0.000    10000   Psych::Parser#initialize       /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/parser.rb:47
+  0.20      0.004     0.004     0.000     0.000    40000   Array#last                     <internal:array>:146
+  0.19      0.004     0.004     0.000     0.000    40000   Array#pop                      
+  0.18      0.012     0.004     0.000     0.008    10000   Psych::ClassLoader#find        /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/class_loader.rb:47
+  0.18      0.005     0.004     0.000     0.001    10000   Psych::Nodes::Sequence#initialize /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/nodes/sequence.rb:73
+  0.17      0.005     0.004     0.000     0.001    10000   Psych::Nodes::Document#initialize /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/nodes/document.rb:45
+  0.17      0.008     0.004     0.000     0.004    10000   Psych::ScalarScanner#parse_int /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/scalar_scanner.rb:109
+  0.17      0.012     0.004     0.000     0.008    10000   Psych::ClassLoader::Restricted#initialize /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/class_loader.rb:77
+  0.16      0.004     0.004     0.000     0.000    40000   Psych::Nodes::Mapping#tag      
+  0.16      0.004     0.004     0.000     0.000    30000   Ractor#[]                      <internal:ractor>:838
+  0.16      1.327     0.004     0.000     1.324    10000   Psych::Visitors::ToRuby#visit_Psych_Nodes_Document /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/visitors/to_ruby.rb:319
+  0.15      0.005     0.003     0.000     0.002    20000   Array#map                      
+  0.15      0.011     0.003     0.000     0.008    10000   <Module::Psych>#load_tags      /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych.rb:712
+  0.14      0.003     0.003     0.000     0.000    30000   <Class::Ractor>#current        <internal:ractor>:288
+  0.14      0.014     0.003     0.000     0.011    10000   Psych::Handlers::DocumentStream#start_document /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/handlers/document_stream.rb:12
+  0.14      0.005     0.003     0.000     0.002    10000   Psych::Nodes::Stream#initialize /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/nodes/stream.rb:32
+  0.14      0.003     0.003     0.000     0.000    10000   Kernel#gem_original_require    
+  0.13      0.842     0.003     0.000     0.839    10000   <Module::Psych>#parse          /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych.rb:398
+  0.13      0.003     0.003     0.000     0.000    10000   String#unpack                  <internal:pack>:19
+  0.13      0.028     0.003     0.000     0.025    10000   Psych::ClassLoader#date        /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/class_loader.rb:39
+  0.13      0.005     0.003     0.000     0.002    10000   Psych::ClassLoader#resolve     /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/class_loader.rb:51
+  0.12      0.003     0.003     0.000     0.000    20000   Array#first                    <internal:array>:102
+  0.12      0.005     0.003     0.000     0.002    10000   Psych::Nodes::Document#root    /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/nodes/document.rb:56
+  0.11      0.801     0.003     0.000     0.799    10000   Psych::Parser#parse            /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/parser.rb:61
+  0.11      0.008     0.002     0.000     0.006    10000   <Module::Psych>#domain_types   /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych.rb:720
+  0.10      0.002     0.002     0.000     0.000    10000   Kernel#Integer                 <internal:kernel>:306
+  0.10      0.002     0.002     0.000     0.000    10000   Psych::ScalarScanner#initialize /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/scalar_scanner.rb:30
+  0.10      0.006     0.002     0.000     0.004    10000   Kernel#dup                     
+  0.10      0.002     0.002     0.000     0.000    10000   Hash#initialize_copy           
+  0.09      0.002     0.002     0.000     0.000    10000   Psych::ClassLoader#path2class  
+  0.09      0.002     0.002     0.000     0.000    10000   <Class::File>#path             
+  0.09      0.008     0.002     0.000     0.006    10000   Psych::ClassLoader#initialize  /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/psych/class_loader.rb:21
+  0.09      0.003     0.002     0.000     0.001    10000   <Module::Gem>#find_default_spec /Users/omerba/.local/share/mise/installs/ruby/3.3.3/lib/ruby/3.3.0/rubygems.rb:1226
+  0.08      0.002     0.002     0.000     0.000    10000   String#delete                  
+  0.08      0.002     0.002     0.000     0.000    20000   Psych::Nodes::Sequence#tag     
+  0.07      0.004     0.002     0.000     0.002    10000   Kernel#initialize_dup          
+  0.07      0.002     0.002     0.000     0.000    10000   Module#to_s                    
+  0.06      0.001     0.001     0.000     0.000    10000   Gem::Specification#name        
+  0.06      0.001     0.001     0.000     0.000    10000   Array#include?                 
+  0.06      0.001     0.001     0.000     0.000    20000   Psych::Nodes::Mapping#anchor   
+  0.05      0.001     0.001     0.000     0.000    10000   <Module::Gem>#discover_gems_on_require 
+  0.05      0.001     0.001     0.000     0.000    20000   Array#size                     
+  0.04      0.001     0.001     0.000     0.000    10000   <Module::Gem>#loaded_specs     
+  0.04      0.001     0.001     0.000     0.000    10000   Integer#succ                   
+  0.04      0.001     0.001     0.000     0.000    10000   Psych::ScalarScanner#class_loader 
+  0.04      0.001     0.001     0.000     0.000    10000   #<Class:0x0000000100a9d980>::Config#load_tags 
+  0.04      0.001     0.001     0.000     0.000    10001   Integer#<                      
+  0.04      0.001     0.001     0.000     0.000    10000   Integer#div                    
+  0.03      0.001     0.001     0.000     0.000    10000   Psych::Nodes::Sequence#anchor  
+  0.03      0.001     0.001     0.000     0.000    10000   #<Class:0x0000000100a9d980>::Config#domain_types 
+  0.03      0.001     0.001     0.000     0.000    10001   Kernel#block_given?            
+  0.03      0.001     0.001     0.000     0.000    10000   Psych::Nodes::Document#implicit_end= 
+  0.03      0.001     0.001     0.000     0.000    10000   NilClass#===                   
+  0.03      0.001     0.001     0.000     0.000    10000   BasicObject#initialize         
+  0.00      2.279     0.000     0.000     2.279        1   Object#profile_parser          bench/profile.rb:63
+
+* recursively called methods
+
+Columns are:
+
+  %self     - The percentage of time spent in this method, derived from self_time/total_time.
+  total     - The time spent in this method and its children.
+  self      - The time spent in this method.
+  wait      - The amount of time this method waited for other threads.
+  child     - The time spent in this method's children.
+  calls     - The number of times this method was called.
+  name      - The name of the method.
+  location  - The location of the method.
+
+The interpretation of method names is:
+
+  * MyObject#test - An instance method "test" of the class "MyObject"
+  * <Object:MyObject>#test - The <> characters indicate a method on a singleton class.
+

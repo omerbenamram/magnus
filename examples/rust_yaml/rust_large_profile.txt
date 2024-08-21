@@ -1,0 +1,32 @@
+Measure Mode: wall_time
+Thread ID: 220
+Fiber ID: 200
+Total: 2.369944
+Sort by: self_time
+
+ %self      total      self      wait     child     calls  name                           location
+ 99.98      2.370     2.370     0.000     0.000      100   String#parse_yaml              
+  0.02      2.370     0.000     0.000     2.370        1   Integer#times                  <internal:numeric>:231
+  0.00      0.000     0.000     0.000     0.000      100   Integer#succ                   
+  0.00      0.000     0.000     0.000     0.000      101   Integer#<                      
+  0.00      2.370     0.000     0.000     2.370        1   Object#profile_parser          bench/profile.rb:63
+  0.00      0.000     0.000     0.000     0.000        1   Kernel#block_given?            
+
+* recursively called methods
+
+Columns are:
+
+  %self     - The percentage of time spent in this method, derived from self_time/total_time.
+  total     - The time spent in this method and its children.
+  self      - The time spent in this method.
+  wait      - The amount of time this method waited for other threads.
+  child     - The time spent in this method's children.
+  calls     - The number of times this method was called.
+  name      - The name of the method.
+  location  - The location of the method.
+
+The interpretation of method names is:
+
+  * MyObject#test - An instance method "test" of the class "MyObject"
+  * <Object:MyObject>#test - The <> characters indicate a method on a singleton class.
+

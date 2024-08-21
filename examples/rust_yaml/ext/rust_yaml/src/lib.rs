@@ -1,9 +1,12 @@
+use std::io::Write;
+
 use magnus::{
     method,
     prelude::*,
     Error, RString, Ruby, RHash, RArray, Symbol, Value, Numeric
 };
-use serde_yaml::Value as YamlValue;
+use serde_yaml::from_reader;
+use serde_yaml::{Value as YamlValue, to_string as yaml_to_string};
 
 fn yaml_to_ruby(ruby: &Ruby, value: &YamlValue) -> Result<magnus::Value, Error> {
     match value {
@@ -49,6 +52,16 @@ fn yaml_to_ruby(ruby: &Ruby, value: &YamlValue) -> Result<magnus::Value, Error> 
     }
 }
 
+
+fn to_yaml(ruby: &Ruby, rb_self: Value) -> Result<RString, Error> {
+    let deser = serde_magnus::Deserializer::new(rb_self);
+    let mut output = Vec::new();
+    let mut serializer = serde_yaml::Serializer::new(&mut output);
+    serde_transcode::transcode(deser, &mut serializer).unwrap();
+
+    Ok(RString::new(&String::from_utf8(output).unwrap()))
+}
+
 fn parse_yaml(ruby: &Ruby, rb_self: RString) -> Result<Value, Error> {
     let yaml_str = rb_self.to_string()?;
     
@@ -62,5 +75,9 @@ fn parse_yaml(ruby: &Ruby, rb_self: RString) -> Result<Value, Error> {
 fn init(ruby: &Ruby) -> Result<(), Error> {
     let class = ruby.define_class("String", ruby.class_object())?;
     class.define_method("parse_yaml", method!(parse_yaml, 0))?;
+
+    let object_class = ruby.class_object();
+    object_class.define_method("to_yaml", method!(to_yaml, 0))?;
+    
     Ok(())
 }

@@ -27,3 +27,8 @@ desc "Run benchmark comparing Rust YAML parser with Ruby's YAML parser"
 task :benchmark => [:release, :compile] do
   ruby "bench/benchmark.rb"
 end
+
+desc "Run profiling for Rust and Ruby YAML parsers"
+task :profile => [:release, :compile] do
+  ruby "bench/profile.rb"
+end

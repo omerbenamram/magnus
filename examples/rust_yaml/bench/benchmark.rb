@@ -1,6 +1,5 @@
 require 'benchmark'
 require 'yaml'
-require 'date'
 require 'base64'
 require_relative '../lib/rust_yaml'
 
@@ -9,7 +8,6 @@ def generate_small_yaml
     ---
     name: John Doe
     age: 30
-    date: !timestamp 2023-04-14
     hobbies:
       - reading
       - swimming
@@ -27,7 +25,6 @@ def generate_large_yaml(size)
       item_#{i}:
         id: #{i}
         name: Name #{i}
-        date: !timestamp #{Date.today + i}
         active: #{i.even?}
         score: #{rand * 100}
         tags: 
@@ -54,13 +51,17 @@ end
 small_yaml = generate_small_yaml
 large_yaml = generate_large_yaml(1000)
 
+# Parse YAML strings to Ruby objects for dumping benchmarks
+small_ruby_object = YAML.safe_load(small_yaml, aliases: true)
+large_ruby_object = YAML.safe_load(large_yaml, aliases: true)
+
 # Number of iterations
 small_n = 10_000
 large_n = 100
 
 Benchmark.bmbm do |x|
   x.report("Ruby YAML.safe_load (small)") do
-    small_n.times { YAML.safe_load(small_yaml, permitted_classes: [Date], aliases: true) }
+    small_n.times { YAML.safe_load(small_yaml, aliases: true) }
   end
 
   x.report("Rust parse_yaml (small)") do
@@ -68,10 +69,26 @@ Benchmark.bmbm do |x|
   end
 
   x.report("Ruby YAML.safe_load (large)") do
-    large_n.times { YAML.safe_load(large_yaml, permitted_classes: [Date], aliases: true) }
+    large_n.times { YAML.safe_load(large_yaml, aliases: true) }
   end
 
   x.report("Rust parse_yaml (large)") do
     large_n.times { large_yaml.parse_yaml }
+  end
+
+  x.report("Ruby YAML.dump (small)") do
+    small_n.times { YAML.dump(small_ruby_object) }
+  end
+
+  x.report("Rust to_yaml (small)") do
+    small_n.times { small_ruby_object.to_yaml }
+  end
+
+  x.report("Ruby YAML.dump (large)") do
+    large_n.times { YAML.dump(large_ruby_object) }
+  end
+
+  x.report("Rust to_yaml (large)") do
+    large_n.times { large_ruby_object.to_yaml }
   end
 end

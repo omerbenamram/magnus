@@ -51,4 +51,22 @@ class YamlParseTest < Test::Unit::TestCase
       invalid_yaml.parse_yaml
     end
   end
+
+  def test_to_yaml
+    ruby_object = {
+      name: "Jane Doe",
+      age: 28,
+      hobbies: ["coding", "hiking"],
+      address: {
+        street: "456 Elm St",
+        city: "Techville",
+        country: "Canada"
+      }
+    }
+
+    yaml_string = ruby_object.to_yaml
+    parsed_yaml = yaml_string.parse_yaml
+
+    assert_equal(ruby_object, parsed_yaml)
+  end
 end
