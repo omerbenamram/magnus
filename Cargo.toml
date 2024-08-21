@@ -18,6 +18,7 @@ exclude = [
     "examples/custom_exception_ruby/ext/ahriman",
     "examples/custom_exception_rust/ext/ahriman",
     "examples/complete_object/ext/temperature",
+    "examples/rust_yaml/ext/rust_yaml",
 ]
 
 [features]
@@ -74,3 +75,4 @@ doc-scrape-examples = false
 [[example]]
 name = "point"
 doc-scrape-examples = false
+

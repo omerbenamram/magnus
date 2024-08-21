@@ -5,9 +5,9 @@ require "rake/extensiontask"
 
 task default: :test
 
-Rake::ExtensionTask.new("rust_blank") do |c|
-  c.lib_dir = "lib/rust_blank"
-  c.ext_dir = "ext/rust_blank"
+Rake::ExtensionTask.new("rust_yaml") do |c|
+  c.lib_dir = "lib/rust_yaml"
+  c.ext_dir = "ext/rust_yaml"
 end
 
 task :dev do
