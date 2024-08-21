@@ -14,7 +14,16 @@ task :dev do
   ENV['RB_SYS_CARGO_PROFILE'] = 'dev'
 end
 
+task :release do
+  ENV['RB_SYS_CARGO_PROFILE'] = 'release'
+end
+
 Rake::TestTask.new do |t|
   t.deps << :dev << :compile
   t.test_files = FileList[File.expand_path("test/*_test.rb", __dir__)]
+end
+
+desc "Run benchmark comparing Rust YAML parser with Ruby's YAML parser"
+task :benchmark => [:release, :compile] do
+  ruby "bench/benchmark.rb"
 end
