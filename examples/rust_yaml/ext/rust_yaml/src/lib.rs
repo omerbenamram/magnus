@@ -1,7 +1,7 @@
 use magnus::{
     method,
     prelude::*,
-    Error, RString, Ruby, RHash, RArray, Symbol, Value,
+    Error, RString, Ruby, RHash, RArray, Symbol, Value, Numeric
 };
 use serde_yaml::Value as YamlValue;
 
@@ -10,10 +10,11 @@ fn yaml_to_ruby(ruby: &Ruby, value: &YamlValue) -> Result<magnus::Value, Error> 
         YamlValue::Null => Ok(ruby.eval("nil")?),
         YamlValue::Bool(b) => Ok(ruby.eval(&format!("{}", b))?),
         YamlValue::Number(n) => {
-            if n.is_i64() {
-                Ok(ruby.eval(&format!("{}", n.as_i64().unwrap()))?)
-            } else {
-                Ok(ruby.eval(&format!("{}", n.as_f64().unwrap()))?)
+            match n {
+                n if n.is_i64() => Ok(ruby.integer_from_i64(n.as_i64().unwrap()).as_value()),
+                n if n.is_u64() => Ok(ruby.integer_from_u64(n.as_u64().unwrap()).as_value()),
+                n if n.is_f64() => Ok(ruby.float_from_f64(n.as_f64().unwrap()).as_value()),
+                _ => Err(Error::new(magnus::exception::runtime_error(), "Unsupported number type")),
             }
         },
         YamlValue::String(s) => Ok(RString::new(s).as_value()),
