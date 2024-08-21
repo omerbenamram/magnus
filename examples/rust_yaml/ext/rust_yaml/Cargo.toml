@@ -13,4 +13,5 @@ serde_yaml = "*"
 # want to work with the unreleased, in-development, next version of Ruby
 rb-sys = "0.9.83"  # Use the latest version available
 serde_magnus = { git = "https://github.com/omerbenamram/serde-magnus", branch = "expose-ser-deser-objects" }
+# serde_magnus = { path = "/Users/omerba/Workspace/serde-magnus" }
 serde-transcode = "1.1.1"

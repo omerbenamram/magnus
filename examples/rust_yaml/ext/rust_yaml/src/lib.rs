@@ -1,12 +1,9 @@
-use std::io::Write;
-
 use magnus::{
     method,
     prelude::*,
-    Error, RString, Ruby, RHash, RArray, Symbol, Value, Numeric
+    Error, RString, Ruby, RHash, RArray, Symbol, Value
 };
-use serde_yaml::from_reader;
-use serde_yaml::{Value as YamlValue, to_string as yaml_to_string};
+use serde_yaml::Value as YamlValue;
 
 fn yaml_to_ruby(ruby: &Ruby, value: &YamlValue) -> Result<magnus::Value, Error> {
     match value {
