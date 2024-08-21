@@ -36,7 +36,16 @@ fn yaml_to_ruby(ruby: &Ruby, value: &YamlValue) -> Result<magnus::Value, Error> 
             }
             Ok(hash.as_value())
         },
-        YamlValue::Tagged(_) => todo!(),
+        YamlValue::Tagged(tag) => {
+            let tag_name = Symbol::new(tag.tag.to_string().trim_start_matches('!'));
+            let tag_value = yaml_to_ruby(ruby, &tag.value)?;
+            
+            let hash = RHash::new();
+            hash.aset(Symbol::new("tag"), tag_name)?;
+            hash.aset(Symbol::new("value"), tag_value)?;
+            
+            Ok(hash.as_value())
+        },
     }
 }
 
