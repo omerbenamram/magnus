@@ -12,3 +12,4 @@ serde_yaml = "*"
 # enable rb-sys feature to test against Ruby head. This is only needed if you
 # want to work with the unreleased, in-development, next version of Ruby
 rb-sys = "0.9.83"  # Use the latest version available
+serde_magnus = "0.8.1"

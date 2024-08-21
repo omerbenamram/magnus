@@ -2,12 +2,9 @@
 
 require "test/unit"
 require_relative "../lib/rust_yaml"
-require 'stringio'
-
-puts String.instance_methods.include?(:parse_and_print_yaml)
 
 class YamlParseTest < Test::Unit::TestCase
-  def test_parse_and_print_yaml
+  def test_parse_yaml
     yaml_string = <<~YAML
       ---
       name: John Doe
@@ -21,27 +18,20 @@ class YamlParseTest < Test::Unit::TestCase
         country: USA
     YAML
 
-    output = capture_output do
-      yaml_string.parse_and_print_yaml?
-    end
+    result = yaml_string.parse_yaml
 
-    assert_match(/Parsed YAML content:.*name: "John Doe".*age: 30.*hobbies:.*- "reading".*- "swimming".*address:.*street: "123 Main St".*city: "Anytown".*country: "USA".*/m, output)
-  end
-
-  def capture_output
-    original_stdout = $stdout
-    $stdout = StringIO.new
-    yield
-    $stdout.string
-  ensure
-    $stdout = original_stdout
+    assert_instance_of(Hash, result)
+    assert_equal("John Doe", result[:name])
+    assert_equal(30, result[:age])
+    assert_equal(["reading", "swimming"], result[:hobbies])
+    assert_equal({street: "123 Main St", city: "Anytown", country: "USA"}, result[:address])
   end
 
   def test_parse_invalid_yaml
     invalid_yaml = "{ invalid: yaml: content }"
 
     assert_raise(RuntimeError, "Invalid YAML content should raise an error") do
-      invalid_yaml.parse_and_print_yaml
+      invalid_yaml.parse_yaml
     end
   end
 end

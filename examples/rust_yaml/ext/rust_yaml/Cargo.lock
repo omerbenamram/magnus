@@ -142,6 +142,18 @@ dependencies = [
 
 [[package]]
 name = "magnus"
+version = "0.6.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b1597ef40aa8c36be098249e82c9a20cf7199278ac1c1a1a995eeead6a184479"
+dependencies = [
+ "magnus-macros",
+ "rb-sys",
+ "rb-sys-env",
+ "seq-macro",
+]
+
+[[package]]
+name = "magnus"
 version = "0.7.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3d87ae53030f3a22e83879e666cb94e58a7bdf31706878a0ba48752994146dab"
@@ -266,8 +278,9 @@ checksum = "e5ea92a5b6195c6ef2a0295ea818b312502c6fc94dde986c5553242e18fd4ce2"
 name = "rust_yaml"
 version = "0.1.0"
 dependencies = [
- "magnus",
+ "magnus 0.7.1",
  "rb-sys",
+ "serde_magnus",
  "serde_yaml",
 ]
 
@@ -294,6 +307,17 @@ name = "serde"
 version = "1.0.185"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "be9b6f69f1dfd54c3b568ffa45c310d6973a5e5148fd40cf515acaf38cf5bc31"
+
+[[package]]
+name = "serde_magnus"
+version = "0.8.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "76c20da583b5e1016e9199ef5f3260f7a8d1b253307d232600f6b12737262dbd"
+dependencies = [
+ "magnus 0.6.4",
+ "serde",
+ "tap",
+]
 
 [[package]]
 name = "serde_yaml"
@@ -330,6 +354,12 @@ dependencies = [
  "quote",
  "unicode-ident",
 ]
+
+[[package]]
+name = "tap"
+version = "1.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "55937e1799185b12863d447f42597ed69d9928686b8d88a1df17376a097d8369"
 
 [[package]]
 name = "unicode-ident"
