@@ -309,6 +309,7 @@ dependencies = [
 [[package]]
 name = "serde_magnus"
 version = "0.8.1"
+source = "git+https://github.com/omerbenamram/serde-magnus?branch=expose-ser-deser-objects#0779830c9fe91644d20b636d0e8b38a3a57ca2a2"
 dependencies = [
  "magnus",
  "serde",

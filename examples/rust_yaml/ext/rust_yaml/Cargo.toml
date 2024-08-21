@@ -12,5 +12,5 @@ serde_yaml = "*"
 # enable rb-sys feature to test against Ruby head. This is only needed if you
 # want to work with the unreleased, in-development, next version of Ruby
 rb-sys = "0.9.83"  # Use the latest version available
-serde_magnus = { path = "/Users/omerba/Workspace/serde-magnus" }
+serde_magnus = { git = "https://github.com/omerbenamram/serde-magnus", branch = "expose-ser-deser-objects" }
 serde-transcode = "1.1.1"
